@@ -1,27 +1,38 @@
-⚡ FF BOOST PRO
-IPHONE 13
-PAINEL GAMER • VERSÃO 1.0
-MAIS CONTROLE. SEU MELHOR JOGO.
-Personalize e salve suas configurações auxiliares para Free Fire MAX.
-🎯 Sensibilidade
-
-RESTAURAR PADRÃO
-Valores de referência: aplique manualmente nas configurações do jogo.
-🧰 Ferramentas
-◎
-Anti-pinar
-Dicas de sensibilidade e HUD.
-▥
-Estabilidade
-Dicas para reduzir travamentos.
-▣
-HUD 3 dedos
-Organize os controles no jogo.
-❄
-Temperatura
-Evite jogar com o aparelho quente.
-🎮 Free Fire MAX
-Abra a página oficial do jogo na App Store.
-ABRIR FREE FIRE MAX
-App auxiliar: não altera o FPS interno, a mira, os arquivos do jogo nem a velocidade dos adversários.
-FF BOOST PRO • Preferências salvas neste navegador.
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09090d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>FF BOOST PRO</title>
+<style>
+:root{--r:#ff3443;--bg:#09090d;--p:#191922;--m:#aaaab5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#391018,transparent 34%),var(--bg);color:white;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+main{max-width:560px;margin:auto;padding:25px 17px}.brand{font-size:21px;font-weight:950}.brand span{color:var(--r)}.tag{float:right;border:1px solid #63303a;border-radius:20px;padding:6px 10px;color:#ff929a;font-size:11px}
+.hero{padding:32px 0 20px}.eyebrow{color:var(--r);font-size:11px;font-weight:900;letter-spacing:2px}.hero h1{font-size:32px;line-height:1.05}.hero p,.muted{color:var(--m);font-size:13px;line-height:1.5}
+.card{background:linear-gradient(145deg,#20202a,#121218);border:1px solid #33333e;border-radius:18px;padding:17px;margin:14px 0}.card h2{font-size:16px;margin:0 0 14px}.control{margin:17px 0}.row{display:flex;justify-content:space-between}.control label{font-size:14px;font-weight:700}.val{color:#ff6873;font-weight:900}input[type=range]{width:100%;accent-color:var(--r);margin-top:10px}
+button{width:100%;border:0;border-radius:13px;padding:15px;background:var(--r);color:white;font-weight:900;margin-top:9px}button.alt{background:#292933;border:1px solid #444450}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.tile{background:#252530;padding:13px;border-radius:13px}.tile b{display:block;font-size:13px;margin:7px 0}.tile small{color:var(--m);font-size:11px}.sym{color:var(--r);font-size:20px}.note{background:#291a1e;border:1px solid #60323b;padding:12px;border-radius:12px;color:#f2c5ca;font-size:11px;line-height:1.5}footer{text-align:center;color:#777;font-size:10px;padding:20px}
+</style>
+</head>
+<body><main>
+<div class="brand">⚡ FF <span>BOOST PRO</span><span class="tag">IPHONE 13</span></div>
+<section class="hero"><div class="eyebrow">PAINEL GAMER • VERSÃO 1.0</div><h1>MAIS CONTROLE.<br><span style="color:var(--r)">SEU MELHOR JOGO.</span></h1><p>Personalize e salve suas configurações auxiliares para Free Fire MAX.</p></section>
+<section class="card"><h2>🎯 Sensibilidade</h2><div id="sliders"></div><button class="alt" id="reset">RESTAURAR PADRÃO</button><p class="muted">Valores de referência: aplique manualmente nas configurações do jogo.</p></section>
+<section class="card"><h2>🧰 Ferramentas</h2><div class="grid">
+<div class="tile"><div class="sym">◎</div><b>Anti-pinar</b><small>Dicas de sensibilidade e HUD.</small></div>
+<div class="tile"><div class="sym">▥</div><b>Estabilidade</b><small>Dicas para reduzir travamentos.</small></div>
+<div class="tile"><div class="sym">▣</div><b>HUD 3 dedos</b><small>Organize os controles no jogo.</small></div>
+<div class="tile"><div class="sym">❄</div><b>Temperatura</b><small>Evite jogar com o aparelho quente.</small></div>
+</div></section>
+<section class="card"><h2>🎮 Free Fire MAX</h2><p class="muted">Abra a página oficial do jogo na App Store.</p><button id="game">ABRIR FREE FIRE MAX</button></section>
+<div class="note">App auxiliar: não altera o FPS interno, a mira, os arquivos do jogo nem a velocidade dos adversários.</div>
+<footer>FF BOOST PRO • Preferências salvas neste navegador.</footer>
+</main>
+<script>
+const items=[["Geral",150],["Ponto vermelho",140],["Mira 2X",130],["Mira 4X",120],["AWM",50]],host=document.getElementById("sliders");
+function get(i){let v=localStorage.getItem("ffbp"+i);return v===null?items[i][1]:+v}
+function draw(){host.innerHTML="";items.forEach(([n],i)=>{let d=document.createElement("div");d.className="control";let row=document.createElement("div");row.className="row";let l=document.createElement("label");l.textContent=n;let v=document.createElement("span");v.className="val";v.textContent=get(i);row.append(l,v);let s=document.createElement("input");s.type="range";s.min=0;s.max=200;s.value=get(i);s.oninput=()=>{localStorage.setItem("ffbp"+i,s.value);v.textContent=s.value};d.append(row,s);host.append(d)})}
+draw();document.getElementById("reset").onclick=()=>{items.forEach((_,i)=>localStorage.removeItem("ffbp"+i));draw()};
+document.getElementById("game").onclick=()=>location.href="https://apps.apple.com/br/app/free-fire-max/id1480516829";
+</script></body></html>
